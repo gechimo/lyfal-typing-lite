@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>法的タイピング - 判例</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="menu-screen">
+            <h1>法的タイピング</h1>
+            <p>モードを選択してください</p>
+            <button onclick="selectMode('normal')">通常モード</button>
+            <button onclick="selectMode('no-ruby')">ふりがな無し</button>
+        </div>
+
+        <div id="ready-screen" class="hidden">
+            <h2 id="selected-mode-name"></h2>
+            <p>準備ができたらスタートボタンを押してください</p>
+            <button id="start-button">スタート！</button>
+            <br>
+            <button onclick="showScreen('menu-screen')" class="sub-btn">メニューに戻る</button>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <div id="timer-display">残り時間: 30.00秒</div>
+            <div id="score-display">スコア: 0</div>
+            
+            <div id="mode-warning" style="color: red; height: 1.5em; font-weight: bold;"></div>
+            
+            <div id="target-word"></div>
+            
+            <input type="url" id="typing-input" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>ゲーム終了！</h2>
+            <div id="final-score" style="font-size: 2em; margin: 20px 0;"></div>
+            <button id="retry-button">もう一度（同じモード）</button>
+            <button onclick="showScreen('menu-screen')">メニュー画面へ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
