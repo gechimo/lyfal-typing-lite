@@ -36,7 +36,7 @@ function selectMode(m) {
 
 async function initializeGame() {
     try {
-        const r = await fetch('data1/terms1.json');
+        const r = await fetch('data1/terms.json');
         _g = await r.json();
         document.getElementById('start-button').onclick = _s;
         document.getElementById('retry-button').onclick = _s;
@@ -124,5 +124,6 @@ function _t(e) {
         }
     }
 }
+
 
 initializeGame();
