@@ -29,7 +29,7 @@ function _r(s) {
 
 function selectMode(m) {
     _p = m;
-    const n = m === 'normal' ? '【通常モード】' : '【ふりがなし】';
+    const n = m === 'normal' ? '【通常モード】' : '【ふりがな無し】';
     document.getElementById('selected-mode-name').textContent = n;
     _r('ready-screen');
 }
@@ -127,3 +127,4 @@ function _t(e) {
 
 
 initializeGame();
+
