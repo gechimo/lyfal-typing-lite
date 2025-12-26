@@ -1,7 +1,7 @@
 [
     {"term": "憲法", "reading": "けんぽう", "roma": "kenpou"},
     {"term": "民法", "reading": "みんぽう", "roma": "minpou"},
-    {"term": "裁判", "reading": "さいばん", "roma": "saiban"}
+    {"term": "裁判", "reading": "さいばん", "roma": "saiban"},
   { "term": "強制の処分", "reading": "きょうせいのしょぶん", "roma": "kyouseinosyobun" },
   { "term": "意思制圧説", "reading": "いしせいあつせつ", "roma": "ishiseiatsusetsu" },
   { "term": "重要権利利益実質的侵害", "reading": "じゅうようけんりりえきじっしつてきしんがい", "roma": "juuyoukenririekijisshitsutekishingai" },
@@ -69,4 +69,5 @@
   { "term": "指定の適法性", "reading": "していのてきほうせい", "roma": "shiteinotekihousei" },
   { "term": "初回接見", "reading": "しょかいせっけん", "roma": "syokaisekken" }
 ]
+
 
