@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="game-container">
         <div id="menu-screen">
             <h1>法的タイピング</h1>
@@ -22,7 +21,7 @@
             <button onclick="selectTime(180)">3分モード</button>
             <button onclick="selectTime(300)">5分モード</button>
             <br>
-            <button onclick="showScreen('menu-screen')" class="sub-btn" style="margin-top: 20px;">戻る</button>
+            <button onclick="_r('menu-screen')" class="sub-btn" style="margin-top: 20px;">戻る</button>
         </div>
 
         <div id="ready-screen" class="hidden">
@@ -31,7 +30,7 @@
             <p>準備ができたらスタートボタンを押してください</p>
             <button id="start-button">スタート！</button>
             <br>
-            <button onclick="showScreen('time-select-screen')" class="sub-btn" style="margin-top: 20px;">戻る</button>
+            <button onclick="_r('time-select-screen')" class="sub-btn" style="margin-top: 20px;">戻る</button>
         </div>
 
         <div id="game-screen" class="hidden">
@@ -46,10 +45,9 @@
             <h2>ゲーム終了！</h2>
             <div id="final-score" style="font-size: 2em; margin: 20px 0;"></div>
             <button id="retry-button">もう一度（同じ設定）</button>
-            <button onclick="showScreen('menu-screen')">メニュー画面へ</button>
+            <button onclick="_r('menu-screen')">メニュー画面へ</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
