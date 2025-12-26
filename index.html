@@ -12,7 +12,7 @@
             <h1>法的タイピング</h1>
             <p>モードを選択してください</p>
             <button onclick="selectMode('normal')">通常モード</button>
-            <button onclick="selectDifficulty('no-ruby')">ふりがな無し</button>
+            <button onclick="selectMode('no-ruby')">ふりがな無し</button>
         </div>
 
         <div id="time-select-screen" class="hidden">
@@ -22,11 +22,12 @@
             <button onclick="selectTime(180)">3分モード</button>
             <button onclick="selectTime(300)">5分モード</button>
             <br>
-            <button onclick="showScreen('menu-screen')" class="sub-btn">戻る</button>
+            <button onclick="showScreen('menu-screen')" class="sub-btn">メニューに戻る</button>
         </div>
 
         <div id="ready-screen" class="hidden">
             <h2 id="selected-mode-name"></h2>
+            <p id="selected-time-info" style="font-weight: bold; color: #1a73e8;"></p>
             <p>準備ができたらスタートボタンを押してください</p>
             <button id="start-button">スタート！</button>
             <br>
@@ -34,7 +35,7 @@
         </div>
 
         <div id="game-screen" class="hidden">
-            <div id="timer-display">残り時間: --秒</div>
+            <div id="timer-display">残り時間: --.--秒</div>
             <div id="score-display">スコア: 0</div>
             
             <div id="mode-warning" style="color: red; height: 1.5em; font-weight: bold;"></div>
@@ -47,37 +48,11 @@
         <div id="result-screen" class="hidden">
             <h2>ゲーム終了！</h2>
             <div id="final-score" style="font-size: 2em; margin: 20px 0;"></div>
-            <button id="retry-button">もう一度（同じモード）</button>
+            <button id="retry-button">もう一度（同じ設定）</button>
             <button onclick="showScreen('menu-screen')">メニュー画面へ</button>
         </div>
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // HTML側で必要になる追加の制御用JavaScript
-        let selectedTimeLimit = 30; // デフォルト
-
-        function selectMode(mode) {
-            // 元のscript.jsにあるはずのモード設定処理を想定
-            if (typeof setGameMode === 'function') setGameMode(mode);
-            showScreen('time-select-screen');
-        }
-
-        function selectTime(seconds) {
-            selectedTimeLimit = seconds;
-            // タイマーの初期表示を更新
-            document.getElementById('timer-display').innerText = `残り時間: ${seconds}.00秒`;
-            showScreen('ready-screen');
-        }
-
-        function showScreen(screenId) {
-            const screens = ['menu-screen', 'time-select-screen', 'ready-screen', 'game-screen', 'result-screen'];
-            screens.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.classList.add('hidden');
-            });
-            document.getElementById(screenId).classList.remove('hidden');
-        }
-    </script>
 </body>
 </html>
