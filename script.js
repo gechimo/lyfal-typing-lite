@@ -4,7 +4,7 @@ const _c = document.getElementById('timer-display');
 const _d = document.getElementById('typing-input');
 const _e = document.getElementById('mode-warning');
 
-let _f = 30; // デフォルトの秒数
+let _f = 30; 
 let _g = [];           
 let _h = null;  
 let _i = '';  
@@ -18,8 +18,7 @@ let _p = 'normal';
 
 const _q = ['menu-screen', 'time-select-screen', 'ready-screen', 'game-screen', 'result-screen'];
 
-// 画面切り替え関数
-function showScreen(s) {
+function _r(s) {
     _q.forEach(id => {
         const el = document.getElementById(id);
         if (el) el.classList.add('hidden');
@@ -28,22 +27,20 @@ function showScreen(s) {
     if (t) t.classList.remove('hidden');
 }
 
-// 1. モード選択：次に「時間選択画面」を表示する
 function selectMode(m) {
     _p = m;
     const n = m === 'normal' ? '【通常モード】' : '【ふりがな無し】';
     document.getElementById('selected-mode-name').textContent = n;
-    showScreen('time-select-screen'); // ここを確実に修正しました
+    _r('time-select-screen');
 }
 
-// 2. 時間選択：時間をセットして「準備画面」を表示する
 function selectTime(seconds) {
     _f = seconds;
     _m = _f;
     const timeInfo = document.getElementById('selected-time-info');
     if (timeInfo) timeInfo.textContent = `${_f / 60}分モード (${_f}秒)`;
     _c.textContent = `残り時間: ${_f.toFixed(2)}秒`;
-    showScreen('ready-screen');
+    _r('ready-screen');
 }
 
 async function initializeGame() {
@@ -65,7 +62,7 @@ function _s() {
     _d.disabled = false;
     _d.value = '';
     _u();
-    showScreen('game-screen');
+    _r('game-screen');
     setTimeout(() => _d.focus(), 10);
     _v();
     _o = true;
@@ -87,7 +84,7 @@ function _w() {
     _o = false;
     clearInterval(_n); 
     document.getElementById('final-score').textContent = `クリア単語数: ${_l}`;
-    showScreen('result-screen');
+    _r('result-screen');
 }
 
 function _u() {
